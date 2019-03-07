@@ -101,6 +101,19 @@
       hourHandEle.style.transform = `rotate(${initHourAngle}deg)`;
   }
 
+  //rotate the clock hands
+  function dial(){      
+    secHandEle.style.transform = `rotate(${initSecAngle + secAngle}deg)`;
+    secAngle = (secAngle + 6);    
+    if(secAngle === 360){
+        secAngle = 6;
+        minHandEle.style.transform = `rotate(${initMinAngle + minAngle}deg)`;
+        minAngle = (minAngle + 6);
+        hourHandEle.style.transform = `rotate(${initHourAngle + hourAngle}deg)`;
+        hourAngle = (hourAngle + 0.5);
+      }
+    }
+
   init();
 
   </script>
