@@ -114,7 +114,11 @@
       }
     }
 
+  //call init() and call dial at every second
   init();
+  window.setInterval(function(){
+    dial();
+  },1000);
 
   </script>
 </body>
