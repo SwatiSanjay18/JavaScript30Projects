@@ -83,6 +83,26 @@
     let minAngle = 6;
     let hourAngle = 0.5;
 
+    //get current date,sec,min and hour
+    //get initial angle of the clock hands
+    //style the clock hands to rotate in calculated degrees
+    function init(){
+      let currentDate = new Date();
+      const timeSec = currentDate.getSeconds();
+      const timeMin = currentDate.getMinutes();
+      const timeHrs = currentDate.getHours(); 
+    
+      initSecAngle = 90 + timeSec * 6;
+      initMinAngle = 90 + timeMin * 6;
+      initHourAngle = 90 + timeHrs * 30 + timeMin * 0.5;
+  
+      secHandEle.style.transform = `rotate(${initSecAngle}deg)`;
+      minHandEle.style.transform = `rotate(${initMinAngle}deg)`;
+      hourHandEle.style.transform = `rotate(${initHourAngle}deg)`;
+  }
+
+  init();
+
   </script>
 </body>
 </html>
